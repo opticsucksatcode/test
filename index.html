@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR-FROCE.XYZ</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #111;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* won’t affect content */
+    background:
+      radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+      radial-gradient(circle at 70% 80%, rgba(255,200,255,0.15) 0%, transparent 25%),
+      radial-gradient(circle at 40% 50%, rgba(200,255,200,0.1) 0%, transparent 15%),
+      radial-gradient(circle at 80% 30%, rgba(200,200,255,0.1) 0%, transparent 20%);
+    background-size: 200% 200%;
+    animation: bokehMove 30s linear infinite;
+  }
+
+  @keyframes bokehMove {
+    0% {
+      background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+    50% {
+      background-position: 50% 50%, 30% 60%, 60% 40%, 40% 70%;
+    }
+    100% {
+      background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+</style>
+</head>
+<body>
+
+
+
+<nav class="navbar">
+    <ul>
+        <a href="index.html"><b>Homepage</b></a>
+        <a href="updates.html"><b>Updates</b></a>
+    </ul>
+</nav>
+
+<nav class="mainpage">
+    <h1>Homepage</h1>
+<p>Welcome to the hompage where you will find
+  <ul>
+    <li>the homepage</li>
+  </ul>
+</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Container for multiple boxes -->
+  <div class="box-container">
+    <div class="box">
+      <div class="header">
+        <img src="outlinestar.png" alt="Icon">
+        <div class="title">Theres so much stuff</div>
+      </div>
+      <div class="small-text">
+        We provide so much stuff we dont even know what half of it is! ( i say we when its just one person working on this whole thing sigh)
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="header">
+        <img src="!!!.png" alt="Icon">
+        <div class="title">I dont take this seriously!</div>
+      </div>
+      <div class="small-text">
+        this site has the biggest unprofessional text to professional site UI probaly ever! (holy normalised site UI professionalism) 
+      </div>
+    </div>
+
+    <!-- Add more boxes here -->
+  </div>
+
+  <div class="other-content">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis excepturi fuga hic porro, doloribus veritatis debitis earum est, cupiditate molestias provident, voluptas quisquam ratione? In doloremque ipsum fugit exercitationem ea.</p>
+  </div>
+
