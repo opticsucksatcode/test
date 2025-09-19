@@ -84,6 +84,7 @@ body {
   position: relative;
 }
 
+
 /* Header row: image + title */
 .header {
   display: flex;
@@ -116,3 +117,12 @@ body {
   margin-top: 50px;
   text-align: center;
 }
+
+/* Make the link behave like a block box */
+.box-link {
+  text-decoration: none;    /* remove underline */
+  display: block;           /* allow width/height */
+  color: inherit;           /* keep text color inside box */
+}
+
+
