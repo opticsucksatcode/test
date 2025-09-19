@@ -1,15 +1,10 @@
-<meta property="og:title" content="Star Forge - be amazed on how professional i am " />
-<meta property="og:description" content="im geeking over this embed thingy i hope it looks good" />
-<meta property="og:image" content="https://starforge.xyz/star.png" />
-<meta property="og:url" content="https://star-forge.xyz" />
-<meta property="og:type" content="website" />
 <!DOCTYPE html>
 <link rel="stylesheet" href="styles.css">
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STAR-FROCE.XYZ</title>
+<title>STAR-FORGE.XYZ</title>
 <style>
   html, body {
     margin: 0;
@@ -100,5 +95,98 @@
   <div class="other-content">
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis excepturi fuga hic porro, doloribus veritatis debitis earum est, cupiditate molestias provident, voluptas quisquam ratione? In doloremque ipsum fugit exercitationem ea.</p>
   </div>
+
+  <style>
+    /* Body styling */
+    body {
+      margin: 0;
+      background-color: #222;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    /* Container for horizontal boxes */
+    .box-container {
+      display: flex;
+      flex-direction: row;       /* horizontal layout */
+      justify-content: center;   /* center the boxes horizontally */
+      align-items: flex-start;   /* align tops */
+      padding: 50px;             /* offset from top */
+      gap: 30px;                 /* space between boxes */
+      flex-wrap: wrap;           /* wrap boxes on smaller screens */
+    }
+
+    /* Make boxes clickable links */
+    .box-link {
+      text-decoration: none;     /* remove underline */
+      display: block;            /* allow full width/height */
+      color: inherit;            /* inherit text color */
+    }
+
+    /* Box styling */
+    .box {
+      width: 300px;
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Hover effect for boxes */
+    .box-link:hover .box {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    /* Header: image + title */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .small-text {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Other page content */
+    .other-content {
+      margin-top: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Horizontal boxes -->
+  <div class="box-container">
+    <a href="bratgen.html" class="box-link">
+      <div class="box">
+        <div class="header">
+          <img src="brat.png" alt="Icon 1">
+          <div class="title">brat gen v1</div>
+        </div>
+        <div class="small-text">the brat cover but you can chang the text i think</div>
+      </div>
+    </a>
 
 
