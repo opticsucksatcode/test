@@ -173,18 +173,43 @@
              </span>
             </a>
            </li>
-           <li>
-            <a class="n02" href="#i" role="button">
-             <svg aria-labelledby="icons01-icon-2-title">
-              <title id="icons01-icon-2-title">
-               Play
-              </title>
-              <use xlink:href="#icon-52655f31fd82f82d1c86cb188764da1e">
-              </use>
-             </svg>
-             <span class="label">
-              Play
-             </span>
+<li>
+  <a class="n02" href="#i" role="button" id="playBtn">
+    <svg aria-labelledby="icons01-icon-2-title">
+      <title id="icons01-icon-2-title">Play</title>
+      <!-- Default icon is paused -->
+      <use id="playIcon" xlink:href="files/paused.svg#icon"></use>
+    </svg>
+    <span class="label">Play</span>
+  </a>
+</li>
+
+<audio id="audio" src="assets/images/music.m4a"></audio>
+
+<script>
+  const playBtn = document.getElementById("playBtn");
+  const playIcon = document.getElementById("playIcon");
+  const audio = document.getElementById("audio");
+
+  // Set the hrefs for your icons
+  const pausedIcon = "files/paused.svg#icon";
+  const playingIcon = "files/playing.svg#icon";
+
+  playBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (audio.paused) {
+      audio.play();
+      playIcon.setAttribute("xlink:href", playingIcon);
+      document.querySelector(".label").textContent = "Pause";
+    } else {
+      audio.pause();
+      playIcon.setAttribute("xlink:href", pausedIcon);
+      document.querySelector(".label").textContent = "Play";
+    }
+  });
+</script>
+
             </a>
            </li>
           </ul>
