@@ -51,12 +51,25 @@
     mix-blend-mode: difference;
     pointer-events: none;
   }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
 </style>
 </head>
 <body>
 
 <h1>!!! SYSTEM INFECTED !!!</h1>
 <p>Critical error detected. Your system is compromised.</p>
+<button onclick="exitFullscreen()">Exit</button>
 <div class="screen" id="glitchLayer"></div>
 
 <script>
@@ -66,6 +79,12 @@
     if (elem.requestFullscreen) elem.requestFullscreen();
     else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
     else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+  }
+
+  function exitFullscreen() {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    else if (document.msExitFullscreen) document.msExitFullscreen();
   }
 
   window.onload = () => {
