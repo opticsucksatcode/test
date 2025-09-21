@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Error!</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    color: lime;
+    font-family: monospace;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    animation: glitch 0.3s infinite;
+  }
+
+  p {
+    animation: flicker 0.1s infinite;
+  }
+
+  @keyframes glitch {
+    0% { text-shadow: 2px 2px red; }
+    20% { text-shadow: -2px -2px cyan; transform: translate(-2px, 2px) skew(1deg, 1deg); }
+    40% { text-shadow: 2px -2px magenta; transform: translate(2px, -2px) skew(-1deg, -1deg); }
+    60% { text-shadow: -2px 2px yellow; transform: translate(-2px, 2px) skew(1deg, 0deg); }
+    80% { text-shadow: 2px 2px red; transform: translate(2px, -2px) skew(0deg, 1deg); }
+    100% { text-shadow: -2px -2px cyan; transform: translate(0,0) skew(0,0); }
+  }
+
+  @keyframes flicker {
+    0%, 19%, 21%, 50%, 52%, 100% { opacity: 1; }
+    20%, 51% { opacity: 0; }
+  }
+
+  .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<h1>!!! SYSTEM INFECTED !!!</h1>
+<p>Critical error detected. Your system is compromised.</p>
+<button onclick="exitFullscreen()">Exit</button>
+<div class="screen" id="glitchLayer"></div>
+
+<script>
+  // Fullscreen request
+  function openFullscreen() {
+    let elem = document.documentElement;
+    if (elem.requestFullscreen) elem.requestFullscreen();
+    else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+    else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+  }
+
+  function exitFullscreen() {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    else if (document.msExitFullscreen) document.msExitFullscreen();
+  }
+
+  window.onload = () => {
+    openFullscreen();
+    glitchEffect();
+  };
+
+  // Glitch effect
+  function glitchEffect() {
+    const layer = document.getElementById('glitchLayer');
+    setInterval(() => {
+      layer.style.background = `linear-gradient(${Math.random()*360}deg, rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.2), rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.2))`;
+      layer.style.transform = `translate(${Math.random()*20-10}px, ${Math.random()*20-10}px) skew(${Math.random()*10-5}deg, ${Math.random()*10-5}deg)`;
+    }, 100);
+  }
+</script>
+</body>
+</html>
